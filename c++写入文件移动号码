@@ -1,0 +1,24 @@
+// 移动手机号码生成.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+//
+#include<Windows.h>
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+//用移动的区号生成密码，然后写入文档
+
+int main()
+{
+    unsigned long long  key_start_139;
+    ofstream outfile; //定义文件对象
+    outfile.open("key.txt",ios::app);//使用追加模式
+
+    for (key_start_139 = 13000000000; key_start_139 <= 19999999999; ++key_start_139) {
+
+        cout << key_start_139 << endl;
+        outfile << key_start_139 << endl;
+    }
+    outfile.close(); //关闭文件
+
+
+}
